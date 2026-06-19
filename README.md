@@ -6,12 +6,18 @@
 ## What's the point?
 >The point of this lab is to gain hands on experience in working with Active Directory in a business environment. I believe true understanding is only ever achieved when you are able to explain the subject to another person with no experience, so this lab will follow more of a 'How to' style format.
 ## What was used?
-> This lab was completed using a Desktop PC running a 14th Gen Intel Core i5 Processor, 16GB of DDR5 RAM, and a NVIDIA RTX 4060 8GB Graphics Card. The software used was VMware Workstation Pro provided by Broadcom, the Operating Systems include Windows Server 2022 Standard, and Windows 11 Pro.
+> This lab was completed using a Desktop PC running a `14th Gen Intel Core i5 Processor`, `16GB of DDR5 RAM`, and a `NVIDIA RTX 4060 8GB Graphics Card`. The software used was `VMware Workstation Pro` provided by Broadcom, the Operating Systems include `Windows Server 2022 Standard`, and `Windows 11 Pro`.
 > 16GB of Memory is recommended at minimum as we will be allocating 10GB of Memory soley to Virtualization to meet minimum requirements.
 ##
 <br><br>
 
-# PART A:  Setting up the Windows 11 Pro Client Machines
+## Table of Contents
+>- [Section A - Setting up the Windows 11 Pro Client Virtual Machine](#part-a)
+>- [Section B - Setting & Configuring up the Windows Server 2022 Server Virtual Machine](#part-b)
+>- [Section C - Creating a Virtual LAN Segment within VMware Workstation & IP Addressing](#part-c)
+<br>
+
+# <a name="part-a"></a> Section A: Setting up the Windows 11 Pro Client Machines
 <br>
 
 # Step 1
@@ -65,11 +71,11 @@
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 200745" src="https://github.com/user-attachments/assets/c016d6b8-0643-430c-ad2e-6c503f01262f" />
 
 # Step 13
-> Click the "Install Tools" button on the bottem right corner of the window to install needed drivers. 
+> Click the "Install Tools" button on the bottom right corner of the window to install needed drivers. 
 <img width="2555" height="1439" alt="Screenshot 2026-06-17 201211" src="https://github.com/user-attachments/assets/2dd277eb-d692-48f1-9c93-13406e8a18df" />
 
 # Step 14
-> Grant the "VMware installation launcher" administrator privaliges 
+> Grant the "VMware installation launcher" administrator privileges 
 <img width="2558" height="1439" alt="Screenshot 2026-06-17 201234" src="https://github.com/user-attachments/assets/9b08a4d7-5c0f-438c-bc9f-e27980438b81" />
 
 # Step 15
@@ -81,11 +87,11 @@
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 201442" src="https://github.com/user-attachments/assets/2fa82f5d-e16d-4fbf-abdd-039d0e67e0ef" />
 
 # Step 17
-> Power off the machine. You are done configuring the cline, at this point you may either repeat PART A or clone the Virtual Machine.
+> Power off the machine. You are done configuring the client, at this point you may either repeat PART A or clone the Virtual Machine.
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 202000" src="https://github.com/user-attachments/assets/4afdc765-b406-4774-943c-7b16dbe0613f" />
 <br><br>
 
-# PART B: Setting up the Server VM 
+## <a name="part-b"></a> Section B: Setting up the Server VM
 <br>
 
 # Step 1
@@ -93,7 +99,7 @@
 <img width="2560" height="1440" alt="Screenshot (150)" src="https://github.com/user-attachments/assets/300fb366-cf2e-4bd0-aabe-a68a7867f3d0" />
 
 # Step 2
-> Select releavent hardware compatibility, the default is fine, then click next.
+> Select relevant hardware compatibility, the default is fine, then click next.
 <img width="2560" height="1440" alt="Screenshot (151)" src="https://github.com/user-attachments/assets/d7932d1e-a9ed-457f-9bd2-7a3f40792dd8" />
 
 # Step 3
@@ -105,15 +111,15 @@
 <img width="2559" height="1439" alt="Screenshot 2026-06-18 111439" src="https://github.com/user-attachments/assets/03cca8b2-1b13-4986-82f8-e21ab853953d" />
 
 # Step 5
-> Name your Virtual Machine something memoraiable such as, "Windows_Server_2022", then click next.
+> Name your Virtual Machine something memorable such as, "Windows_Server_2022", then click next.
 <img width="2559" height="1439" alt="Screenshot 2026-06-18 111449" src="https://github.com/user-attachments/assets/2a014404-ae06-49fa-ba1a-2e37e7c161bb" />
 
 # Step 6
-> Ensure to select UEFI bootloader alonng with enabling Secure Boot, then click next.
+> Ensure to select UEFI bootloader along with enabling Secure Boot, then click next.
 <img width="2559" height="1439" alt="Screenshot 2026-06-18 111508" src="https://github.com/user-attachments/assets/60ef8dd6-3ed8-489f-96ec-afa11821d410" />
 
 # Step 7
-> Allocate a pre-detirmined amount of processing power for the VM to utilize. Two cores is recomended for stable performance, though 1 may work. Then click next.
+> Allocate a pre-determined amount of processing power for the VM to utilize. Two cores is recommended for stable performance, though 1 may work. Then click next.
 <img width="2559" height="1439" alt="Screenshot 2026-06-18 111515" src="https://github.com/user-attachments/assets/06d87a05-75a1-4563-9575-18a7a0d003ad" />
 
 # Step 8
@@ -193,7 +199,7 @@
 <img width="2557" height="1439" alt="Screenshot 2026-06-18 112732" src="https://github.com/user-attachments/assets/bd7aa9cf-ed6d-4315-941e-fe85d223680d" />
 
 # Step 27
-> Login with the password you just created, you will automatically be lead to the Server Manager page to configure your Server. Allow the PC to be discoverable on the network, if this option does not come up by default it means VMware did't attatch a network adapter on boot, you can attatch it under VM > Removeable Devices > Network Adapter > Connect.
+> Login with the password you just created, you will automatically be lead to the Server Manager page to configure your Server. Allow the PC to be discoverable on the network, if this option does not come up by default it means VMware didn't attach a network adapter on boot, you can attach it under VM > Removeable Devices > Network Adapter > Connect.
 <img width="2560" height="1440" alt="Screenshot (49)" src="https://github.com/user-attachments/assets/ab376349-4fe1-48a6-8177-1acc5bce3b22" />
 
 # Step 28
@@ -237,7 +243,7 @@
 <img width="2560" height="1440" alt="Screenshot (62)" src="https://github.com/user-attachments/assets/73b80def-9bf4-480c-9bdb-ccfe0558af92" />
 
 # Step 38
-> Select "Add a new forest", then name the Root domain name to and ensure it ends in .local , then click next.
+> Select "Add a new forest", then name the Root domain name to and ensure it ends in `.local` , then click next.
 <img width="2560" height="1440" alt="Screenshot (65)" src="https://github.com/user-attachments/assets/ac65e218-a9fb-40c3-bf1f-3c2475e38d01" />
 
 # Step 39
@@ -261,7 +267,7 @@
 <img width="2560" height="1440" alt="Screenshot (71)" src="https://github.com/user-attachments/assets/b1081635-cde4-4380-8269-2666e9226a74" />
 
 # Step 44
-> Verify that the pre-requisite test sucessfully passes and allows installation, then click install. (We will be configuring the network settings shortly afterwords)
+> Verify that the pre-requisite test successfully passes and allows installation, then click install. (We will be configuring the network settings shortly afterwards)
 <img width="2560" height="1440" alt="Screenshot (72)" src="https://github.com/user-attachments/assets/4fa37acf-f80e-4a52-96b4-d182e174a9a0" />
 
 # Step 45
@@ -269,7 +275,7 @@
 <img width="2560" height="1440" alt="Screenshot (78)" src="https://github.com/user-attachments/assets/34ac86bb-f94d-4a74-9663-4abb9b76031b" />
 <br><br>
 
-# PART C: Configuring a Virtual VLAN Segment within VMware to allow data communication between the Server and Clients. 
+<h1 id="part-c">Section C: Creating a Virtual VLAN Segment within VMware</h1>
 <br>
 
 # Step 1 
@@ -281,11 +287,11 @@
 <img width="2560" height="1440" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/5577d1f5-8edb-43ec-8455-f432584b00c1" />
 
 # Step 3
-> Click "Add", a Segment will be created and will be the backbone of communcation between the Server and Clients, then click ok.
+> Click "Add", a Segment will be created and will be the backbone of communication between the Server and Clients, then click ok.
 <img width="2560" height="1440" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/64065273-1d34-422e-b4d3-d022a232d085" />
 
 # Step 4
-> Do the same for your Other Client and Server VM.
+> Do the same for your other Client and Server VM.
 <img width="2560" height="1440" alt="Screenshot (164)" src="https://github.com/user-attachments/assets/05c26abb-3f0c-4767-9e50-e0e70333620a" />
 <img width="2560" height="1440" alt="Screenshot (165)" src="https://github.com/user-attachments/assets/91bdf4fd-277c-4562-9cc7-d8fe03543334" />
 
@@ -302,15 +308,15 @@
 <img width="2560" height="1440" alt="Screenshot (177)" src="https://github.com/user-attachments/assets/4bc4d1ba-d22a-4e88-94f3-f48be8439787" />
 
 # Step 8
-> Click "Use the following IP address" to manually assign a IP address.
+> Click "Use the following IP address" to manually assign an IP address.
 <img width="2560" height="1440" alt="Screenshot (178)" src="https://github.com/user-attachments/assets/1e0afaf4-db6e-4615-9659-2fe613ba88c2" />
 
 # Step 9
-> We will be designating the Server the IP address 192.168.1.10, leave the DNS as the default. Then click ok. (Keep note of the Server IP Address as it will act as our DNS server for our client machines)
+> We will be designating the Windows Server the IP address 192.168.1.10, leave the DNS as the default. Then click ok. (Keep note of the Server IP Address as it will act as our DNS server for our client machines)
 <img width="2560" height="1440" alt="Screenshot (180)" src="https://github.com/user-attachments/assets/86e6231e-191f-4085-8b42-4271dcede055" />
 
 # Step 10
-> Open one of the Windows 11 Pro Client VM's.
+> Open one of the Windows 11 Pro Client VMs.
 <img width="2560" height="1440" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/5d6d58d7-1d76-438e-82f3-e176b9877142" />
 
 # Step 11
@@ -330,7 +336,10 @@
 <img width="2560" height="1440" alt="Screenshot (172)" src="https://github.com/user-attachments/assets/ab871a59-2c4b-45c3-974c-6ccceba3940f" />
 
 # Step 15
-> Open a terminal, and run the following commands to test network connectivity. ping 192.168.1.10 | nslookup BusinessCorp.local
+> Open a terminal, and run the following commands to test network connectivity.
+>- `ping 192.168.1.10`
+>- `nslookup BusinessCorp.local`
+
 <img width="2560" height="1440" alt="Screenshot (183)" src="https://github.com/user-attachments/assets/4cf2bc6a-e9a7-40d3-8695-bae465ccc013" />
 
 # Step 16
