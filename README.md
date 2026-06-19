@@ -267,3 +267,72 @@
 # Step 45
 > After installation, a system restart will initiate and leave you back on the lock screen.
 <img width="2560" height="1440" alt="Screenshot (78)" src="https://github.com/user-attachments/assets/34ac86bb-f94d-4a74-9663-4abb9b76031b" />
+<br><br>
+
+# PART C: Configuring a Virtual VLAN Segment within VMware to allow data communication between the Server and Clients. 
+<br>
+
+# Step 1 
+> Focusing on the Windows 11 Pro Clients first, click the VM option on the toolbar and enter the Virtual Machine Settings,
+<img width="2560" height="1440" alt="Screenshot (160)" src="https://github.com/user-attachments/assets/5904bf0c-14bd-4792-8b26-da70ccb3a7f6" />
+
+# Step 2
+> Click the "LAN Segments" button.
+<img width="2560" height="1440" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/5577d1f5-8edb-43ec-8455-f432584b00c1" />
+
+# Step 3
+> Click "Add", a Segment will be created and will be the backbone of communcation between the Server and Clients, then click ok.
+<img width="2560" height="1440" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/64065273-1d34-422e-b4d3-d022a232d085" />
+
+# Step 4
+> Do the same for your Other Client and Server VM.
+<img width="2560" height="1440" alt="Screenshot (164)" src="https://github.com/user-attachments/assets/05c26abb-3f0c-4767-9e50-e0e70333620a" />
+<img width="2560" height="1440" alt="Screenshot (165)" src="https://github.com/user-attachments/assets/91bdf4fd-277c-4562-9cc7-d8fe03543334" />
+
+# Step 5
+> Open your Server VM and in the windows search type, "View Network Connections" and open the program.
+<img width="2560" height="1440" alt="Screenshot (174)" src="https://github.com/user-attachments/assets/c4acfef7-8b75-491f-b1c9-009da456df24" />
+
+# Step 6
+> Right click on the Ethernet network adapter, and select properties.
+<img width="2560" height="1440" alt="Screenshot (176)" src="https://github.com/user-attachments/assets/83f5ec3b-d92d-48f3-af13-d960d0ba2fac" />
+
+# Step 7
+> Click on TCP/IPv4, then click the Properties button.
+<img width="2560" height="1440" alt="Screenshot (177)" src="https://github.com/user-attachments/assets/4bc4d1ba-d22a-4e88-94f3-f48be8439787" />
+
+# Step 8
+> Click "Use the following IP address" to manually assign a IP address.
+<img width="2560" height="1440" alt="Screenshot (178)" src="https://github.com/user-attachments/assets/1e0afaf4-db6e-4615-9659-2fe613ba88c2" />
+
+# Step 9
+> We will be designating the Server the IP address 192.168.1.10, leave the DNS as the default. Then click ok. (Keep note of the Server IP Address as it will act as our DNS server for our client machines)
+<img width="2560" height="1440" alt="Screenshot (180)" src="https://github.com/user-attachments/assets/86e6231e-191f-4085-8b42-4271dcede055" />
+
+# Step 10
+> Open one of the Windows 11 Pro Client VM's.
+<img width="2560" height="1440" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/5d6d58d7-1d76-438e-82f3-e176b9877142" />
+
+# Step 11
+> In windows search type "View Network Connections" and open the program.
+<img width="2560" height="1440" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/f4ed17ed-db38-4870-a633-dd354d211401" />
+
+# Step 12
+> Click on TCP/IPv4, then click the Properties button.
+<img width="2560" height="1440" alt="Screenshot (169)" src="https://github.com/user-attachments/assets/b125d75b-b7f3-43a1-a8ab-5301d2c28bb5" />
+
+# Step 13
+> Click "Use the following IP address" to manually assign a IP address, this machine will be designated the IP address 192.168.1.12
+<img width="2560" height="1440" alt="Screenshot (171)" src="https://github.com/user-attachments/assets/97752084-7886-4ff8-8e00-51ef25eb673f" />
+
+# Step 14
+> Enter the Server IP address as the DNS for the Client machine.
+<img width="2560" height="1440" alt="Screenshot (172)" src="https://github.com/user-attachments/assets/ab871a59-2c4b-45c3-974c-6ccceba3940f" />
+
+# Step 15
+> Open a terminal, and run the following commands to test network connectivity. ping 192.168.1.10 | nslookup BusinessCorp.local
+<img width="2560" height="1440" alt="Screenshot (183)" src="https://github.com/user-attachments/assets/4cf2bc6a-e9a7-40d3-8695-bae465ccc013" />
+
+# Step 16
+> Open your other Windows 11 Pro Client VM, repeat from Part C, Step 10.
+<img width="2560" height="1440" alt="Screenshot (184)" src="https://github.com/user-attachments/assets/e6f545f6-da39-41b6-891e-a83d42b98d99" />
