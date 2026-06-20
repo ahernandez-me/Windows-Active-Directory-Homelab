@@ -8,16 +8,19 @@
 ## What was used?
 > This lab was completed using a Desktop PC running a `14th Gen Intel Core i5 Processor`, `16GB of DDR5 RAM`, and a `NVIDIA RTX 4060 8GB Graphics Card`. The software used was `VMware Workstation Pro` provided by Broadcom, the Operating Systems include `Windows Server 2022 Standard`, and `Windows 11 Pro`.
 > 16GB of Memory is recommended at minimum as we will be allocating 10GB of Memory soley to Virtualization to meet minimum requirements.
-##
-<br><br>
-
-## Table of Contents
->- [Section A - Setting up the Windows 11 Pro Client Virtual Machine](#part-a)
->- [Section B - Setting & Configuring up the Windows Server 2022 Server Virtual Machine](#part-b)
->- [Section C - Creating a Virtual LAN Segment within VMware Workstation & IP Addressing](#part-c)
 <br>
 
-# <a name="part-a"></a> Section A: Setting up the Windows 11 Pro Client Machines
+## Table of Contents
+>- [Section A: Setting up the Windows 11 Pro Client Machines](#part-a)
+>- [Section B: Setting up the Server VM](#part-b)
+>- [Section C: Creating a Virtual VLAN Segment within VMware](#part-c)
+>- [Section D: Group Policy](#part-d)
+>- [Section E: Signing into a Work Domain](#part-e)
+>- [Section F: Verification of Policy Enforcement](#part-f)
+
+<br>
+
+# <a name="part-a"></a> Section A: Setting up the Windows 11 Pro Client Machines </h1>
 <br>
 
 # Step 1
@@ -91,7 +94,7 @@
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 202000" src="https://github.com/user-attachments/assets/4afdc765-b406-4774-943c-7b16dbe0613f" />
 <br><br>
 
-## <a name="part-b"></a> Section B: Setting up the Server VM
+# <a name="part-b"></a> Section B: Setting up the Server VM </h1>
 <br>
 
 # Step 1
@@ -345,3 +348,79 @@
 # Step 16
 > Open your other Windows 11 Pro Client VM, repeat from Part C, Step 10.
 <img width="2560" height="1440" alt="Screenshot (184)" src="https://github.com/user-attachments/assets/e6f545f6-da39-41b6-891e-a83d42b98d99" />
+<br><br>
+
+<h1 id="part-d">Section D: Group Policy</h1>
+<br>
+
+Placeholder Text
+
+
+
+
+<h1 id="part-e">Section E: Signing into the Work Domain</h1>
+<br>
+
+# Step 1
+> Open a Client VM.
+<img width="2560" height="1440" alt="Screenshot (296)" src="https://github.com/user-attachments/assets/f2c44b8c-b35b-4d94-b2eb-0a96c30b39b6" />
+
+# Step 2
+> Search for "Settings" and open the program.
+<img width="2560" height="1440" alt="Screenshot (298)" src="https://github.com/user-attachments/assets/7c05c09d-23f1-41b2-8e70-95ecf1d7b295" />
+
+# Step 3
+> Navigate to System > About > Domain and Workgroup
+<img width="2560" height="1440" alt="Screenshot (299)" src="https://github.com/user-attachments/assets/84a09a27-0b8e-4ee9-8780-bd04031f7ded" />
+
+# Step 4
+> Click "Change"
+<img width="2560" height="1440" alt="Screenshot (301)" src="https://github.com/user-attachments/assets/05bc5048-6e45-4cbb-a4a7-10231ffc1c6e" />
+
+# Step 5
+> Select "Domain" under Membor of.
+<img width="2560" height="1440" alt="Screenshot (302)" src="https://github.com/user-attachments/assets/ec52b89b-6cee-4a84-ab09-348a7496a8b1" />
+
+# Step 6
+> Enter the Domain `BusinessCorp.local`.
+<img width="2560" height="1440" alt="Screenshot (303)" src="https://github.com/user-attachments/assets/e051881e-cb00-42e1-b1ed-672d05d381b6" />
+
+# Step 7
+> Login with one of the users previously created under the `NYC-Office/Users/` Ex. `user: shill`, `password: *******`
+<img width="2560" height="1440" alt="Screenshot (305)" src="https://github.com/user-attachments/assets/fb979f50-1c89-465e-9446-b434f2a6ee99" />
+
+# Step 8
+> You may encounter an error because of the password reset Policy applied eariler, navigate to the affected user in the Active Directory.
+> <img width="2560" height="1440" alt="Screenshot (306)" src="https://github.com/user-attachments/assets/369f4aba-aed3-423b-b507-b900e1a90bb6" />
+
+# Step 9
+> Check `Unlock Account` and disable `User must change password at next login`
+<img width="2560" height="1440" alt="Screenshot (307)" src="https://github.com/user-attachments/assets/9779a847-4848-411c-ac16-c4bb626cfa8d" />
+
+# Step 10
+> Reattempt to login.
+<img width="2560" height="1440" alt="Screenshot (309)" src="https://github.com/user-attachments/assets/7751dd42-c333-447f-8ada-e39e0bf00851" />
+
+# Step 11
+> Click Ok.
+<img width="2560" height="1440" alt="Screenshot (310)" src="https://github.com/user-attachments/assets/3c39a68a-8206-4ea3-a197-f94cb37c2c9e" />
+
+# Step 12
+> Click Ok, then save and close any open files. 
+<img width="2560" height="1440" alt="Screenshot (311)" src="https://github.com/user-attachments/assets/909ab200-67e0-4cc8-97ae-c9464820076a" />
+
+# Step 13
+> Restart.
+<img width="2560" height="1440" alt="Screenshot (312)" src="https://github.com/user-attachments/assets/299bde79-8557-4978-84f1-47261e95d18c" />
+
+# Step 14
+> Select `Other User` and login with your credentials.
+<img width="2560" height="1440" alt="Screenshot (315)" src="https://github.com/user-attachments/assets/34521617-7167-4927-9232-4a125144a1e4" />
+
+# Step 15
+> Allow the setup process to run its course, you will be left on the desktop afterwards.
+<img width="2560" height="1440" alt="Screenshot (318)" src="https://github.com/user-attachments/assets/50ce9473-d107-49f8-8189-366aaafd65fb" />
+<br><br>
+
+<h1 id="part-f">Section F: Verification of Policy Enforcement</h1>
+
