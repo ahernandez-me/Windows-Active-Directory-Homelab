@@ -13,10 +13,11 @@
 ## Table of Contents
 >- [Section A: Setting up the Windows 11 Pro Client Machines](#part-a)
 >- [Section B: Setting up the Server VM](#part-b)
->- [Section C: Creating a Virtual VLAN Segment within VMware](#part-c)
->- [Section D: Group Policy](#part-d)
->- [Section E: Signing into a Work Domain](#part-e)
->- [Section F: Verification of Policy Enforcement](#part-f)
+>- [Section C: Creating a Virtual LAN Segment within VMware](#part-c)
+>- [Section D: Creating Organizational Units and Users in Active Directory](#part-d)
+>- [Section E: Group Policy](#part-e)
+>- [Section F: Signing into a Work Domain](#part-f)
+>- [Section G: Verification of Policy Enforcement](#part-g)
 
 <br>
 
@@ -278,7 +279,7 @@
 <img width="2560" height="1440" alt="Screenshot (78)" src="https://github.com/user-attachments/assets/34ac86bb-f94d-4a74-9663-4abb9b76031b" />
 <br><br>
 
-<h1 id="part-c">Section C: Creating a Virtual VLAN Segment within VMware</h1>
+<h1 id="part-c">Section C: Creating a Virtual LAN Segment within VMware</h1>
 <br>
 
 # Step 1 
@@ -350,15 +351,73 @@
 <img width="2560" height="1440" alt="Screenshot (184)" src="https://github.com/user-attachments/assets/e6f545f6-da39-41b6-891e-a83d42b98d99" />
 <br><br>
 
-<h1 id="part-d">Section D: Group Policy</h1>
+<h1 id="part-d">Section D: Creating Organizational Units and Users in Active Directory</h1>
 <br>
 
-Placeholder Text
+# Step 1
+> Boot into Windows Server 2022.
+<img width="2560" height="1440" alt="Screenshot (186)" src="https://github.com/user-attachments/assets/200f408c-573e-4bec-827b-d147d0d4fa81" />
+
+# Step 2
+> Search for `Active Directory Users and Computers` in Windows Search, then open the program.
+<img width="2560" height="1440" alt="Screenshot (188)" src="https://github.com/user-attachments/assets/7e254bb0-925e-41a5-8d06-4587f5050137" />
+
+# Step 3
+> <img width="2560" height="1440" alt="Screenshot (189)" src="https://github.com/user-attachments/assets/1e3b1722-e600-455d-b97a-58575ce990c7" />
+
+# Explanation and Context
+> Within Active Directory there are many object types. A `User Object` represents a person's identity within the Domain, while a `Computer Object` represents and acts as a computer's credentials to the domain and its resources. Both the user and machine must identify themselves to the Domain to be granted access. 
+
+> An `Organizational Unit (OU)` is considered a `Container Object` representing a folder/container to create structure and enforce policies on groups of users and devices.
+
+> A `Distribution List` acts as Email list for things such as company wide announcements
+
+> A `Security Group` is used to grant access permissions to Files, Folders, and Shared Resources within the Company.
+
+# Step 4
+> On your screen you will see the `Domain Object` which serves as the Root Directory for your Active Directory Forest. Right click the root, click `New`, then `Organizational Unit`
+<img width="2560" height="1440" alt="Screenshot (191)" src="https://github.com/user-attachments/assets/27f21b6c-50a7-4570-8ea9-7cc402224a47" />
+
+# Step 5
+> We will create a new OU named "NYC-Office", you have the option to add a Accidental Deletion will deny Everyone (Including Administrators) the abiility to accidentially delete a OU, this can be undone by enabling Advanced Features and then manually removing the Permission Entry within the Security tab in the OUs Properties.
+<img width="2560" height="1440" alt="Screenshot (192)" src="https://github.com/user-attachments/assets/140b5483-a8fd-4319-973d-18e48063458f" />
+
+# Step 6
+> Within the NYC-Office OU, create two new OUs named Admins and Users as a baseline
+<img width="2560" height="1440" alt="Screenshot (195)" src="https://github.com/user-attachments/assets/110b25f0-5b9a-4d59-992d-9e132a7cb57d" />
+<img width="2560" height="1440" alt="Screenshot (196)" src="https://github.com/user-attachments/assets/836592c8-6f11-41c3-a3ae-fefe2b54cc5b" />
+
+# Step 7
+> Navigate inside the Users OU, then rick click the OU and create a new User, fill out the user credentials. Good pratice email syntax is the first letter of the first name followed by the full last name @ the Domain. For demonstration purposes our users will be Sally Hill located under the Users OU, and John Salami located under the Admins OU.
+<img width="2560" height="1440" alt="Screenshot (211)" src="https://github.com/user-attachments/assets/75ec1646-455c-4e21-b9ab-c917bf8155f2" />
+<img width="2560" height="1440" alt="Screenshot (207)" src="https://github.com/user-attachments/assets/eaddfbd8-3ef2-43cb-af68-3b9f554a9b7a" />
+<br><br>
+
+<h1 id="part-e">Section E: Group Policy</h1>
+
+# Part 1
+> Boot into Windows Server 2022.
+<img width="2560" height="1440" alt="Screenshot (214)" src="https://github.com/user-attachments/assets/76ab659c-82c5-4f40-92c7-a6cb418e54c1" />
+
+# Part 2
+> Search for `Group Policy Management` in Window's Search.
+<img width="2560" height="1440" alt="Screenshot (215)" src="https://github.com/user-attachments/assets/1f6e4a36-1e26-4692-adf8-7f4a179ba46e" />
+
+# Part 3
+> Navigate to `Forest: BusinessCorp.local / Domains / BusinessCorp.local / NYC-Office`
+<img width="2560" height="1440" alt="Screenshot (218)" src="https://github.com/user-attachments/assets/a9cb68c3-e81f-4bdc-ae96-e8d913b2ed67" />
+
+# Part 4
+> Right click on the desired OU and `Create a GPO in this domain, and Link it here...`
+<img width="2560" height="1440" alt="Screenshot (219)" src="https://github.com/user-attachments/assets/35cf641a-8488-49b3-9c49-b976b8c6f46e" />
+
+# Part 5
+> Name the Policy, in this case we will be enforcing some basic Password polcies for our Users OU in the NYC-Office OU.
+
+PLACE HOLDER PLACE HOLDER PALCE HOLDER
 
 
-
-
-<h1 id="part-e">Section E: Signing into the Work Domain</h1>
+<h1 id="part-f">Section F: Signing into the Work Domain</h1>
 <br>
 
 # Step 1
@@ -422,5 +481,5 @@ Placeholder Text
 <img width="2560" height="1440" alt="Screenshot (318)" src="https://github.com/user-attachments/assets/50ce9473-d107-49f8-8189-366aaafd65fb" />
 <br><br>
 
-<h1 id="part-f">Section F: Verification of Policy Enforcement</h1>
+<h1 id="part-f">Section G: Verification of Policy Enforcement</h1>
 
