@@ -32,11 +32,11 @@
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 194224" src="https://github.com/user-attachments/assets/9ef0ed3b-36d6-4860-8741-8259391891a8" />
 
 # Step 3
->Select the " Installer disc image file (iso) " option and navigate to the location where you downloaded your Windows 11 ISO, then click next.
+>Select the `Installer disc image file (iso)` option and navigate to the location where you downloaded your Windows 11 ISO, then click next.
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 194229" src="https://github.com/user-attachments/assets/b080978b-6cda-4c61-b6f3-c528b62f99e5" />
 
 # Step 4
->Name the Virtual Machine to something memorable such as Win11_Client_1, then click next.
+>Name the Virtual Machine to something memorable such as `Win11_Client_1` then click next.
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 194258" src="https://github.com/user-attachments/assets/c2c8f1c0-3519-4c2b-8d6e-bf178cea1553" />
 
 # Step 5
