@@ -7,7 +7,7 @@
 >The point of this lab is to gain hands on experience in working with Active Directory in a business environment. I believe true understanding is only ever achieved when you are able to explain the subject to another person with no experience, so this lab will follow more of a 'How to' style format.
 ## What was used?
 > This lab was completed using a Desktop PC running a `14th Gen Intel Core i5 Processor`, `16GB of DDR5 RAM`, and a `NVIDIA RTX 4060 8GB Graphics Card`. The software used was `VMware Workstation Pro` provided by Broadcom, the Operating Systems include `Windows Server 2022 Standard`, and `Windows 11 Pro`.
-> 16GB of Memory is recommended at minimum as we will be allocating 10GB of Memory soley to Virtualization to meet minimum requirements.
+> 16GB of Memory is recommended at minimum as we will be allocating 10GB of Memory solely to Virtualization to meet minimum requirements.
 <br>
 
 ## Table of Contents
@@ -17,7 +17,6 @@
 >- [Section D: Creating Organizational Units and Users in Active Directory](#part-d)
 >- [Section E: Group Policy](#part-e)
 >- [Section F: Signing into a Work Domain](#part-f)
->- [Section G: Verification of Policy Enforcement](#part-g)
 
 <br>
 
@@ -62,7 +61,7 @@
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 194438" src="https://github.com/user-attachments/assets/0758b4c8-339c-4025-bb2a-de78aab3d48e" />
 
 # Step 10
->Wait 10,000 years for Windows to install.
+>Wait for Windows installation to complete (this may take ~10 minutes)
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 194503" src="https://github.com/user-attachments/assets/c252f8d7-7b1f-4e35-9924-574361d38c9b" />
 <img width="2559" height="1439" alt="Screenshot 2026-06-17 195124" src="https://github.com/user-attachments/assets/ecd20f3c-00a4-4324-a3e9-bfbbb465ca05" />
 
@@ -287,66 +286,62 @@
 <img width="2560" height="1440" alt="Screenshot (160)" src="https://github.com/user-attachments/assets/5904bf0c-14bd-4792-8b26-da70ccb3a7f6" />
 
 # Step 2
-> Click the "LAN Segments" button.
+> Click the "LAN Segments" button then click `Add` a Segment will be created and will be the backbone of communication between the Server and Clients, then click ok.
 <img width="2560" height="1440" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/5577d1f5-8edb-43ec-8455-f432584b00c1" />
 
 # Step 3
-> Click "Add", a Segment will be created and will be the backbone of communication between the Server and Clients, then click ok.
-<img width="2560" height="1440" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/64065273-1d34-422e-b4d3-d022a232d085" />
-
-# Step 4
 > Do the same for your other Client and Server VM.
 <img width="2560" height="1440" alt="Screenshot (164)" src="https://github.com/user-attachments/assets/05c26abb-3f0c-4767-9e50-e0e70333620a" />
 <img width="2560" height="1440" alt="Screenshot (165)" src="https://github.com/user-attachments/assets/91bdf4fd-277c-4562-9cc7-d8fe03543334" />
 
-# Step 5
+# Step 4
 > Open your Server VM and in the windows search type, "View Network Connections" and open the program.
 <img width="2560" height="1440" alt="Screenshot (174)" src="https://github.com/user-attachments/assets/c4acfef7-8b75-491f-b1c9-009da456df24" />
 
-# Step 6
+# Step 5
 > Right click on the Ethernet network adapter, and select properties.
 <img width="2560" height="1440" alt="Screenshot (176)" src="https://github.com/user-attachments/assets/83f5ec3b-d92d-48f3-af13-d960d0ba2fac" />
 
-# Step 7
+# Step 6
 > Click on TCP/IPv4, then click the Properties button.
 <img width="2560" height="1440" alt="Screenshot (177)" src="https://github.com/user-attachments/assets/4bc4d1ba-d22a-4e88-94f3-f48be8439787" />
 
-# Step 8
+# Step 7
 > Click "Use the following IP address" to manually assign an IP address.
 <img width="2560" height="1440" alt="Screenshot (178)" src="https://github.com/user-attachments/assets/1e0afaf4-db6e-4615-9659-2fe613ba88c2" />
 
-# Step 9
+# Step 8
 > We will be designating the Windows Server the IP address 192.168.1.10, leave the DNS as the default. Then click ok. (Keep note of the Server IP Address as it will act as our DNS server for our client machines)
 <img width="2560" height="1440" alt="Screenshot (180)" src="https://github.com/user-attachments/assets/86e6231e-191f-4085-8b42-4271dcede055" />
 
-# Step 10
+# Step 9
 > Open one of the Windows 11 Pro Client VMs.
 <img width="2560" height="1440" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/5d6d58d7-1d76-438e-82f3-e176b9877142" />
 
-# Step 11
+# Step 10
 > In windows search type "View Network Connections" and open the program.
 <img width="2560" height="1440" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/f4ed17ed-db38-4870-a633-dd354d211401" />
 
-# Step 12
+# Step 11
 > Click on TCP/IPv4, then click the Properties button.
 <img width="2560" height="1440" alt="Screenshot (169)" src="https://github.com/user-attachments/assets/b125d75b-b7f3-43a1-a8ab-5301d2c28bb5" />
 
-# Step 13
+# Step 12
 > Click "Use the following IP address" to manually assign a IP address, this machine will be designated the IP address 192.168.1.12
 <img width="2560" height="1440" alt="Screenshot (171)" src="https://github.com/user-attachments/assets/97752084-7886-4ff8-8e00-51ef25eb673f" />
 
-# Step 14
+# Step 13
 > Enter the Server IP address as the DNS for the Client machine.
 <img width="2560" height="1440" alt="Screenshot (172)" src="https://github.com/user-attachments/assets/ab871a59-2c4b-45c3-974c-6ccceba3940f" />
 
-# Step 15
+# Step 14
 > Open a terminal, and run the following commands to test network connectivity.
 >- `ping 192.168.1.10`
 >- `nslookup BusinessCorp.local`
 
 <img width="2560" height="1440" alt="Screenshot (183)" src="https://github.com/user-attachments/assets/4cf2bc6a-e9a7-40d3-8695-bae465ccc013" />
 
-# Step 16
+# Step 15
 > Open your other Windows 11 Pro Client VM, repeat from Part C, Step 10.
 <img width="2560" height="1440" alt="Screenshot (184)" src="https://github.com/user-attachments/assets/e6f545f6-da39-41b6-891e-a83d42b98d99" />
 <br><br>
@@ -361,9 +356,7 @@
 # Step 2
 > Search for `Active Directory Users and Computers` in Windows Search, then open the program.
 <img width="2560" height="1440" alt="Screenshot (188)" src="https://github.com/user-attachments/assets/7e254bb0-925e-41a5-8d06-4587f5050137" />
-
-# Step 3
-> <img width="2560" height="1440" alt="Screenshot (189)" src="https://github.com/user-attachments/assets/1e3b1722-e600-455d-b97a-58575ce990c7" />
+<img width="2560" height="1440" alt="Screenshot (189)" src="https://github.com/user-attachments/assets/1e3b1722-e600-455d-b97a-58575ce990c7" />
 
 # Explanation and Context
 > Within Active Directory there are many object types. A `User Object` represents a person's identity within the Domain, while a `Computer Object` represents and acts as a computer's credentials to the domain and its resources. Both the user and machine must identify themselves to the Domain to be granted access. 
@@ -379,7 +372,7 @@
 <img width="2560" height="1440" alt="Screenshot (191)" src="https://github.com/user-attachments/assets/27f21b6c-50a7-4570-8ea9-7cc402224a47" />
 
 # Step 5
-> We will create a new OU named "NYC-Office", you have the option to add a Accidental Deletion will deny Everyone (Including Administrators) the abiility to accidentially delete a OU, this can be undone by enabling Advanced Features and then manually removing the Permission Entry within the Security tab in the OUs Properties.
+> We will create a new OU named "NYC-Office", you have the option to add a Accidental Deletion will deny Everyone (Including Administrators) the ability to accidentially delete a OU, this can be undone by enabling Advanced Features and then manually removing the Permission Entry within the Security tab in the OUs Properties.
 <img width="2560" height="1440" alt="Screenshot (192)" src="https://github.com/user-attachments/assets/140b5483-a8fd-4319-973d-18e48063458f" />
 
 # Step 6
@@ -388,7 +381,7 @@
 <img width="2560" height="1440" alt="Screenshot (196)" src="https://github.com/user-attachments/assets/836592c8-6f11-41c3-a3ae-fefe2b54cc5b" />
 
 # Step 7
-> Navigate inside the Users OU, then rick click the OU and create a new User, fill out the user credentials. Good pratice email syntax is the first letter of the first name followed by the full last name @ the Domain. For demonstration purposes our users will be Sally Hill located under the Users OU, and John Salami located under the Admins OU.
+> Navigate inside the Users OU, then right click the OU and create a new User, fill out the user credentials. Good practice email syntax is the first letter of the first name followed by the full last name @ the Domain. For demonstration purposes our users will be Sally Hill located under the Users OU, and John Salami located under the Admins OU.
 <img width="2560" height="1440" alt="Screenshot (211)" src="https://github.com/user-attachments/assets/75ec1646-455c-4e21-b9ab-c917bf8155f2" />
 <img width="2560" height="1440" alt="Screenshot (207)" src="https://github.com/user-attachments/assets/eaddfbd8-3ef2-43cb-af68-3b9f554a9b7a" />
 <br><br>
@@ -400,7 +393,7 @@
 <img width="2560" height="1440" alt="Screenshot (214)" src="https://github.com/user-attachments/assets/76ab659c-82c5-4f40-92c7-a6cb418e54c1" />
 
 # Part 2
-> Search for `Group Policy Management` in Window's Search.
+> Search for `Group Policy Management` in Windows Search.
 <img width="2560" height="1440" alt="Screenshot (215)" src="https://github.com/user-attachments/assets/1f6e4a36-1e26-4692-adf8-7f4a179ba46e" />
 
 # Part 3
@@ -412,9 +405,52 @@
 <img width="2560" height="1440" alt="Screenshot (219)" src="https://github.com/user-attachments/assets/35cf641a-8488-49b3-9c49-b976b8c6f46e" />
 
 # Part 5
-> Name the Policy, in this case we will be enforcing some basic Password polcies for our Users OU in the NYC-Office OU.
+> Name the Policy, in this case we will be enforcing some basic Password policies for our Users OU in the NYC-Office OU.
+<img width="2560" height="1440" alt="Screenshot (220)" src="https://github.com/user-attachments/assets/8d4387e4-89f5-4c4e-906a-3f575dd777ba" />
 
-PLACE HOLDER PLACE HOLDER PALCE HOLDER
+# Part 6
+> Our First Policy will be centered around basic security, ensuring users have complex passwords, minimum character requirements, and a maximum password age
+<img width="2560" height="1440" alt="Screenshot (221)" src="https://github.com/user-attachments/assets/dd3db595-3b69-4435-a621-ffd5b4a136ed" />
+
+# Part 7
+> Right click the Group Policy Object and click `Edit`
+<img width="2560" height="1440" alt="Screenshot (222)" src="https://github.com/user-attachments/assets/a9a79f4c-78fc-4a23-8b11-b8caa7b6f634" />
+
+# Part 8
+> You will be confronted `Computer` and `User` Configuration. Computer Policies apply to the machine regardless of user, while user Configs only apply to said User.
+<img width="2560" height="1440" alt="Screenshot (223)" src="https://github.com/user-attachments/assets/586bf866-d3ff-4ad1-a1b2-9f168a85ed0d" />
+
+# Part 9
+> We want to ensure everyone on this machine will adhere to the password policy, so we will go forward with a Computer Config Policy
+<img width="2560" height="1440" alt="Screenshot (224)" src="https://github.com/user-attachments/assets/be004341-d408-456c-ad18-b2ea8ee9315a" />
+
+# Part 10
+> Navigate to `NYC_Security_Policy / Computer Configuration / Policies / Windows Settings / Security Settings / Account Policies / Password Policy`
+<img width="2560" height="1440" alt="Screenshot (232)" src="https://github.com/user-attachments/assets/3321528f-93ad-43da-b51f-83eecaeb434a" />
+
+# Part 11
+> Select `Password must meet complexity  requirements`
+<img width="2560" height="1440" alt="Screenshot (234)" src="https://github.com/user-attachments/assets/422f83db-2a3a-4e2a-ad0b-65d8bd5414eb" />
+
+# Part 12
+> Define the policy as enabled, this will require all passwords to meet 3 of the 4 following requirements,
+> - Includes a uppercase letter
+> - Includes a lower case letter
+> - Includes a digit 0 - 9
+> - Includes a special character (!, $, #, %)
+<img width="2560" height="1440" alt="Screenshot (235)" src="https://github.com/user-attachments/assets/c35306e8-df82-4d78-8c81-7113545b0deb" />
+
+# Part 13
+> Select `Minimum password length`
+<img width="2560" height="1440" alt="Screenshot (237)" src="https://github.com/user-attachments/assets/1ceac4fc-dc37-47a0-8c3b-bbef093e7934" />
+
+# Part 14
+> Define the policy, and then require all passwords be a minimum of 10 characters long.
+<img width="2560" height="1440" alt="Screenshot (238)" src="https://github.com/user-attachments/assets/82e2122e-eae1-49b6-8dbe-bf8178fa7b3b" />
+
+# Part 15
+> Define the Maximum password age policy so that the password expires every 90 days, you will be prompted that the Minimum password age will be changed to 30 days which restricts password change frequency.
+<img width="2560" height="1440" alt="Screenshot (241)" src="https://github.com/user-attachments/assets/3e9a5d46-9588-4807-8ace-1820c80ab46d" />
 
 
 <h1 id="part-f">Section F: Signing into the Work Domain</h1>
@@ -425,7 +461,7 @@ PLACE HOLDER PLACE HOLDER PALCE HOLDER
 <img width="2560" height="1440" alt="Screenshot (296)" src="https://github.com/user-attachments/assets/f2c44b8c-b35b-4d94-b2eb-0a96c30b39b6" />
 
 # Step 2
-> Search for "Settings" and open the program.
+> Search for "Settings" and open the program.  
 <img width="2560" height="1440" alt="Screenshot (298)" src="https://github.com/user-attachments/assets/7c05c09d-23f1-41b2-8e70-95ecf1d7b295" />
 
 # Step 3
@@ -437,7 +473,7 @@ PLACE HOLDER PLACE HOLDER PALCE HOLDER
 <img width="2560" height="1440" alt="Screenshot (301)" src="https://github.com/user-attachments/assets/05bc5048-6e45-4cbb-a4a7-10231ffc1c6e" />
 
 # Step 5
-> Select "Domain" under Membor of.
+> Select "Domain" under Member of.
 <img width="2560" height="1440" alt="Screenshot (302)" src="https://github.com/user-attachments/assets/ec52b89b-6cee-4a84-ab09-348a7496a8b1" />
 
 # Step 6
@@ -449,7 +485,7 @@ PLACE HOLDER PLACE HOLDER PALCE HOLDER
 <img width="2560" height="1440" alt="Screenshot (305)" src="https://github.com/user-attachments/assets/fb979f50-1c89-465e-9446-b434f2a6ee99" />
 
 # Step 8
-> You may encounter an error because of the password reset Policy applied eariler, navigate to the affected user in the Active Directory.
+> You may encounter an error because of the password reset Policy applied earlier, navigate to the affected user in the Active Directory.
 > <img width="2560" height="1440" alt="Screenshot (306)" src="https://github.com/user-attachments/assets/369f4aba-aed3-423b-b507-b900e1a90bb6" />
 
 # Step 9
@@ -480,6 +516,4 @@ PLACE HOLDER PLACE HOLDER PALCE HOLDER
 > Allow the setup process to run its course, you will be left on the desktop afterwards.
 <img width="2560" height="1440" alt="Screenshot (318)" src="https://github.com/user-attachments/assets/50ce9473-d107-49f8-8189-366aaafd65fb" />
 <br><br>
-
-<h1 id="part-f">Section G: Verification of Policy Enforcement</h1>
 
